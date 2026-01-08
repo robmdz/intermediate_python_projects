@@ -12,9 +12,9 @@ A command-line tool for reading, formatting, and enhancing Markdown files with t
 ## 🏗️ The Roadmap & To-Do List
 
 ### Phase 1: The Foundation (Local Reader)
-- [ ] Initialize project with a virtual environment (`venv`).
-- [ ] Create a `view` command that opens an `.md` file.
-- [ ] Render the file content beautifully in the terminal (No raw text!).
+- [X] Initialize project with a virtual environment (`venv`).
+- [X] Create a `view` command that opens an `.md` file.
+- [X] Render the file content beautifully in the terminal (No raw text!).
 - [ ] Handle `FileNotFound` and `PermissionError` gracefully.
 
 ### Phase 2: The Brain (LLM Integration)
@@ -39,3 +39,7 @@ A command-line tool for reading, formatting, and enhancing Markdown files with t
 | **UI/Formatting** | `Rich` |
 | **AI SDK** | `OpenAI` or `Anthropic` |
 | **Environment** | `python-dotenv` |
+
+## Documentation Links:
+[Typer](https://typer.tiangolo.com/tutorial/)
+[Rich](https://rich.readthedocs.io/en/stable/markup.html)
