@@ -18,7 +18,7 @@ A command-line tool for reading, formatting, and enhancing Markdown files with t
 - [ ] Handle `FileNotFound` and `PermissionError` gracefully.
 
 ### Phase 2: The Brain (LLM Integration)
-- [ ] Setup `.env` support for API Key security.
+- [X] Setup `.env` support for API Key security.
 - [ ] Implement a `chat` or `ask` command to send file context to an LLM.
 - [ ] Add a **Loading Spinner** to keep the terminal interactive during API calls.
 - [ ] Implement **Streaming** (Output words as they are generated).
@@ -43,3 +43,4 @@ A command-line tool for reading, formatting, and enhancing Markdown files with t
 ## Documentation Links:
 [Typer](https://typer.tiangolo.com/tutorial/)
 [Rich](https://rich.readthedocs.io/en/stable/markup.html)
+[LangChain](https://docs.langchain.com/oss/python/langchain/overview)

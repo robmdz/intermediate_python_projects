@@ -1,1 +1,4 @@
 typer
+langchain
+langchain-openai
+python-dotenv
