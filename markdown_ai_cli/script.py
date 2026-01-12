@@ -14,21 +14,26 @@ api_key = os.getenv("OPENAI_API_KEY")
 
 app = typer.Typer()
     
-@tool(description = "Showing a specific file")
-async def open_file(path: str) -> None:
-    with open(path, 'r') as file:
-        content = Markdown(file.read())
-        print(content)
+# @tool(description = "Showing a specific file")
+# def open_file(path: str) -> None:
+#     if not os.path.exists(path):
+#         return (f"Error: File '{path}' not found")
+#     with open(path, 'r') as file:
+#         content = Markdown(file.read())
+#         return(content)
     
 @tool(description = "rewriting a specific file, or creating and adding information to the file")
-async def edit_file(path: str) -> None:
+def edit_file(path: str, content: str) -> None:
+    if not os.path.exists(path):
+        return (f"Error: File '{path}' not found")
     with open(path, 'w') as file:
-        content = file.read()
-        print(content) 
+        file.write(content)
         
 @tool(description = "To create a new empty file")
-async def create_file(path: str) -> None:
+def create_file(path: str) -> None:
     with open(path, 'w') as file:
+        if not os.path.exists(path):
+            return (f"Error: File '{path}' not found")
         pass  
         
         
@@ -41,9 +46,9 @@ agent = create_agent(
 @app.command()
 def call_agent(message: str) -> None:
     user_message = ""
-    print("Hi, I'm CLITY your CLI notes assistant")
+    print("Hi, I'm CLITY, your CLI notes assistant")
     while user_message != "EXIT":
-        user_message = input("Typing your requirements: ")
+        user_message = input("Type your requirements: ")
         
         response = agent.invoke({"messages":[{"role": "user", "content": f"{user_message}"}]})
         
