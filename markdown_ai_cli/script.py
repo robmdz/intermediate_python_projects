@@ -13,15 +13,7 @@ load_dotenv()
 api_key = os.getenv("OPENAI_API_KEY")
 
 app = typer.Typer()
-    
-# @tool(description = "Showing a specific file")
-# def open_file(path: str) -> None:
-#     if not os.path.exists(path):
-#         return (f"Error: File '{path}' not found")
-#     with open(path, 'r') as file:
-#         content = Markdown(file.read())
-#         return(content)
-    
+        
 @tool(description = "rewriting a specific file, or creating and adding information to the file")
 def edit_file(path: str, content: str) -> None:
     if not os.path.exists(path):
